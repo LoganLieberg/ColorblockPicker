@@ -19,7 +19,7 @@ $(document).ready(function () {
 //here we call the function and store everything in the object
   appendDom(colorBlock);
 //these individual statements are click handlers for each individual button
-  $('#blocks').on('click', '.colorFire', function () {
+  $('#blocks').on('click', 'button', function () {
 //if and else for determining if what they clicked was correct and displaying the right messages
     if (firstColor == $(this).data('color')) {
       $('#blocks p').text('Success!');
@@ -32,39 +32,7 @@ $(document).ready(function () {
       $('.randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
     }
   });
-  $('#blocks').on('click', '.colorAlmond', function () {
-    if (firstColor == $(this).data('color')) {
-      $('#blocks p').text('Success!');
-      firstColor = pickNumber();
-      $('.randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
-    } else {
-      $('#blocks p').text('Nice try, nerd.');
-      //firstColor =pickNumber();
-      $('.randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
-    }
-  });
-  $('#blocks').on('click', '.colorFuchsia', function () {
-    if (firstColor == $(this).data('color')) {
-      $('#blocks p').text('Success!');
-      firstColor = pickNumber();
-      $('.randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
-    } else {
-      $('#blocks p').text('Nice try, nerd.');
-      //firstColor = pickNumber();
-      $('.randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
-    }
-  });
-  $('#blocks').on('click', '.colorKhaki', function () {
-    if (firstColor == $(this).data('color')) {
-      $('#blocks p').text('Success!');
-      firstColor = pickNumber();
-      $('.randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
-    } else {
-      $('#blocks p').text('Nice try, nerd.');
-      //firstColor = pickNumber();
-      $('#randoColor').replaceWith('<span class="randoColor">' + firstColor + '</span>');
-    }
-  });
+
 //generates a random number
     function randomNumber(){
       return Math.floor(Math.random() * (1 + 4 - 1) + 1);
